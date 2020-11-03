@@ -28,9 +28,9 @@
     <div class="card-body register-card-body">
       <p class="login-box-msg">Register a new membership</p>
 
-      <form>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Full name">
+      <form action="php/register.php" method="POST">
+        <div class="input-group mb-3">   
+          <input type="text" class="form-control" placeholder="Full name" name="full-name">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -38,7 +38,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" class="form-control" placeholder="Email" name="email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -46,7 +46,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="text" class="form-control" placeholder="USERNAME" name="userName">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -54,7 +54,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Retype password">
+          <input type="password" class="form-control" placeholder="Password" name="password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -64,7 +64,7 @@
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
-              <input type="checkbox" id="agreeTerms" name="terms" value="agree" required>
+              <input type="checkbox" id="agreeTerms" name="terms" value="agree">
               <label for="agreeTerms">
                I agree to the <a href="#">terms</a>
               </label>
@@ -72,23 +72,11 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block submitBtn">Register</button>
+            <input type="submit" class="btn btn-primary btn-block submitBtn" name="submit" placeholder="submit" >
           </div>
           <!-- /.col -->
         </div>
       </form>
-
-      <!-- <div class="social-auth-links text-center">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i>
-          Sign up using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i>
-          Sign up using Google+
-        </a>
-      </div> -->
 
       <a href="login.html" class="text-center">I already have a membership</a>
     </div>
@@ -103,37 +91,5 @@
 <script src="..\..\plugins\bootstrap\js\bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="..\..\dist\js\adminlte.min.js"></script>
-<script type="text/javascript">
-  $(document).ready(function(e){
-    // Submit form data via Ajax
-    $("#fupForm").on('submit', function(e){
-        e.preventDefault();
-        $.ajax({
-            type: 'POST',
-            url: 'php/register.php',
-            // 
-            dataType: 'json',
-            contentType: false,
-            cache: false,
-            processData:false,
-            beforeSend: function(){
-                $('.submitBtn').attr("disabled","disabled");
-                $('#fupForm').css("opacity",".5");
-            },
-            success: function(response){ //console.log(response);
-                $('.statusMsg').html('');
-                if(response.status == 1){
-                    $('#fupForm')[0].reset();
-                    $('.statusMsg').html('<p class="alert alert-success">'+response.message+'</p>');
-                }else{
-                    $('.statusMsg').html('<p class="alert alert-danger">'+response.message+'</p>');
-                }
-                $('#fupForm').css("opacity","");
-                $(".submitBtn").removeAttr("disabled");
-            }
-        });
-    });
-});
-</script>
 </body>
 </html>

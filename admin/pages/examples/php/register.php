@@ -1,67 +1,81 @@
-<?php 
-$uploadDir = 'uploads/'; 
-$response = array( 
-    'status' => 0, 
-    'message' => 'Form submission failed, please try again.' 
-); 
- 
-// If form is submitted 
-if(isset($_POST['name']) || isset($_POST['email']) || isset($_POST['password'])){ 
-    // Get the submitted form data 
-    $name = $_POST['name']; 
-    $email = $_POST['email'];
-    $password = $_POST['password']
-     
-    // Check whether submitted data is not empty 
-    if(!empty($name) && !empty($email)){ 
-        // Validate email 
-        if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){ 
-            $response['message'] = 'Please enter a valid email.'; 
-        }else{ 
-            // $uploadStatus = 1; 
-             
-            // // Upload file 
-            // $uploadedFile = ''; 
-            // if(!empty($_FILES["file"]["name"])){ 
-                 
-            //     // File path config 
-            //     $fileName = basename($_FILES["file"]["name"]); 
-            //     $targetFilePath = $uploadDir . $fileName; 
-            //     $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION); 
-                 
-            //     // Allow certain file formats 
-            //     $allowTypes = array('pdf', 'doc', 'docx', 'jpg', 'png', 'jpeg'); 
-            //     if(in_array($fileType, $allowTypes)){ 
-            //         // Upload file to the server 
-            //         if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){ 
-            //             $uploadedFile = $fileName; 
-            //         }else{ 
-            //             $uploadStatus = 0; 
-            //             $response['message'] = 'Sorry, there was an error uploading your file.'; 
-            //         } 
-            //     }else{ 
-            //         $uploadStatus = 0; 
-            //         $response['message'] = 'Sorry, only PDF, DOC, JPG, JPEG, & PNG files are allowed to upload.'; 
-            //     } 
-            } 
-             
-            if($uploadStatus == 1){ 
-                // Include the database config file 
-                include_once 'dbconnection.php'; 
-                 
-                // Insert form data in the database 
-                $insert = $db->query("INSERT INTO form_data (name,email,file_namepassword) VALUES ('".$name."','".$email."','".$uploadedFile."')"); 
-                 
-                if($insert){ 
-                    $response['status'] = 1; 
-                    $response['message'] = 'Form data submitted successfully!'; 
-                } 
-            } 
-        } 
-    }else{ 
-         $response['message'] = 'Please fill all the mandatory fields (name and email).'; 
-    } 
-} 
- 
-// Return response 
-echo json_encode($response);
+<?php session_start();
+require_once('dbconnection.php');
+
+//Code for Registration 
+if(isset($_POST['submit']))
+{
+	$fname=$_POST['full-name'];
+    $email=$_POST['email'];
+    $username=$_POST['userName'];
+    $password=$_POST['password'];
+    // echo $username;
+    // echo $fname;
+    // echo $email;
+    // echo $password;
+	
+	// $enc_password=$password;
+	$msg=mysqli_query($conn,"insert into user(name,email,username,password) values('$fname','$email','$username','$password')");
+if($msg == 1)
+{
+    echo "<script>alert('Register successfully');</script>";
+    header("location:");
+}
+else{
+    echo "<script>alert('unRegister successfully');</script> ";
+}
+}
+
+// Code for login 
+if(isset($_POST['login']))
+{
+$password=$_POST['password'];
+$dec_password=$password;
+$useremail=$_POST['uemail'];
+$ret= mysqli_query($con,"SELECT * FROM users WHERE email='$useremail' and password='$dec_password'");
+$num=mysqli_fetch_array($ret);
+if($num>0)
+{
+$extra="welcome.php";
+$_SESSION['login']=$_POST['uemail'];
+$_SESSION['id']=$num['id'];
+$_SESSION['name']=$num['fname'];
+$host=$_SERVER['HTTP_HOST'];
+$uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+header("location:http://$host$uri/$extra");
+exit();
+}
+else
+{
+echo "<script>alert('Invalid username or password');</script>";
+$extra="index.php";
+$host  = $_SERVER['HTTP_HOST'];
+$uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+//header("location:http://$host$uri/$extra");
+exit();
+}
+}
+
+//Code for Forgot Password
+
+if(isset($_POST['send']))
+{
+$femail=$_POST['femail'];
+
+$row1=mysqli_query($con,"select email,password from users where email='$femail'");
+$row2=mysqli_fetch_array($row1);
+if($row2>0)
+{
+$email = $row2['email'];
+$subject = "Information about your password";
+$password=$row2['password'];
+$message = "Your password is ".$password;
+mail($email, $subject, $message, "From: $email");
+echo  "<script>alert('Your Password has been sent Successfully');</script>";
+}
+else
+{
+echo "<script>alert('Email not register with us');</script>";	
+}
+}
+
+?>
