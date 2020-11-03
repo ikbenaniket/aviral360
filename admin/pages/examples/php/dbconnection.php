@@ -1,14 +1,12 @@
-<?php 
-// Database configuration 
-$dbHost     = "localhost"; 
-$dbUsername = "root"; 
-$dbPassword = "root"; 
-$dbName     = "codexworld"; 
- 
-// Create database connection 
-$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName); 
- 
-// Check connection 
-if ($db->connect_error) { 
-    die("Connection failed: " . $db->connect_error); 
-}
+<?php
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$db="admin";
+	/*Create connection*/
+	$conn = mysqli_connect($servername, $username, $password,$db);
+if (mysqli_connect_errno())
+	{
+	echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ 	}
+?>
