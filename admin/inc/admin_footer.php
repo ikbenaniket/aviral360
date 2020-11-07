@@ -1,8 +1,8 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; <?php echo date('Y'); ?>-<a href="#">अविरल-365</a>.</strong>
+    <strong>Copyright &copy; <?php echo date('Y'); ?>-<a href="#" style="color:brown">अविरल-365</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b>-Null
+      <b>Version</b>&nbsp;1.01
     </div>
   </footer>
 

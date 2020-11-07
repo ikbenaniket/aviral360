@@ -7,9 +7,9 @@ include "inc/admin_header.php";
         <!-- Small boxes (Stat box) -->
  <div class="row">
           <div class="col-12">
-            <div class="card card-primary">
+            <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">UserData-अविरल-365</h3>
+                <h3 class="card-title">College Reviews-अविरल-365</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -42,7 +42,7 @@ include "inc/admin_header.php";
                       <td><span> <i class="nav-icon fas fa-circle text-success"></i></span></td>
                       <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                       <td><span>  <div class="btn-group">
-                    <button type="button" class="btn btn-primary">Action</button>
+                    <button type="button" class="btn btn-warning">Action</button>
                     <button type="button" class="btn btn-default dropdown-toggle dropdown-hover dropdown-icon" data-toggle="dropdown">
                       <span class="sr-only">Toggle Dropdown</span>
                       <div class="dropdown-menu" role="menu">
