@@ -24,7 +24,7 @@ include "inc/admin_header.php";
         <div class="row">
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-info">
+            <div class="small-box bg-success">
               <div class="inner">
                 <h3>150</h3>
 
@@ -38,7 +38,7 @@ include "inc/admin_header.php";
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-success">
+            <div class="small-box bg-warning">
               <div class="inner">
                 <h3>53<sup style="font-size: 20px">%</sup></h3>
 
@@ -52,7 +52,7 @@ include "inc/admin_header.php";
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
+            <div class="small-box bg-primary">
               <div class="inner">
                 <h3>44</h3>
 
@@ -67,7 +67,7 @@ include "inc/admin_header.php";
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-danger">
+            <div class="small-box bg-info">
               <div class="inner">
                 <h3>65</h3>
 
@@ -284,7 +284,7 @@ include "inc/admin_header.php";
                       <td><span> <i class="nav-icon fas fa-circle text-success"></i></span></td>
                       <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                       <td><span>  <div class="btn-group">
-                    <button type="button" class="btn btn-info">Action</button>
+                    <button type="button" class="btn btn-primary">Action</button>
                     <button type="button" class="btn btn-default dropdown-toggle dropdown-hover dropdown-icon" data-toggle="dropdown">
                       <span class="sr-only">Toggle Dropdown</span>
                       <div class="dropdown-menu" role="menu">
