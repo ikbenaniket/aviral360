@@ -59,7 +59,7 @@ include "inc/admin_header.php";
                 <p>User Registrations</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add"></i>
+                <i class="fas fa-user"></i>
               </div>
               
             </div>
