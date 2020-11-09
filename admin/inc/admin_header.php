@@ -1,3 +1,13 @@
+<?php
+ob_start();
+session_start();
+include "pages/examples/dbc.php";
+if(isset($_SESSION['username']))
+{
+$username=$_SESSION['username'];
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,66 +51,12 @@
         <a href="index.php" class="nav-link"> <i class="fas fa-home"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="contact.php" class="nav-link">Contact</i></a>
+        <a href="contact.php" class="nav-link"><i class="fas fa-envelope"></i></a>
       </li>
     </ul>
 
     <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <!-- Messages Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-comments"></i>
-          <span class="badge badge-danger navbar-badge">0</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="dist\img\user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Brad Diesel
-                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">Call me whenever you can...</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-           
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-        </div>
-      </li>
-      <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">0</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">0 Notifications</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 0 new messages
-            <span class="float-right text-muted text-sm">0 mins</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
-          </a>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-        </div>
-      </li>
-    </ul>
+  
   </nav>
   <!-- /.navbar -->
 
@@ -120,7 +76,7 @@
           <img src="dist\img\logoaviral.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="profile.php" class="d-block">User Name</a>
+          <a href="profile.php" class="d-block"><?php echo $username; ?></a>
         </div>
       </div>
     <?php
@@ -130,3 +86,13 @@
     </div>
     <!-- /.sidebar -->
   </aside>
+
+
+  <?php
+}
+else
+{
+  header("Location:pages/examples/login.php");
+}
+
+?>

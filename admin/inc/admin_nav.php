@@ -1,3 +1,7 @@
+
+ 
+ 
+ 
  <!-- Sidebar Menu -->
  <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -45,7 +49,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+              <i class="nav-icon fas fa-edit"></i>
               <p>
                 Publish Now
                 <i class="fas fa-angle-left right"></i>
@@ -76,7 +80,7 @@
           <li class="nav-header">MISCELLANEOUS</li>
           <li class="nav-item">
             <a href="profile.php" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
+              <i class="nav-icon fas fa-user-circle"></i>
               <p>
                 Profile
               </p>
@@ -92,10 +96,10 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
+              <i class="nav-icon fas fa-comments"></i>
               <p>
                 Comments
-                <i class="fas fa-angle-left right"></i>
+               
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -150,7 +154,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-plus-square"></i>
+              <i class="nav-icon fas fa-envelope"></i>
               <p>
                 Leads
                 </p>
@@ -159,40 +163,40 @@
           <li class="nav-header">Others</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-file"></i>
+              <i class="nav-icon fas fa-envelope-square"></i>
               <p>Subscriptions</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-file"></i>
+              <i class="nav-icon fas fa-quote-left"></i>
               <p>Testimonials</p>
             </a>
           </li>
           <li class="nav-header">Settings</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="fas fa-circle nav-icon"></i>
+              <i class="fas fa-cogs nav-icon"></i>
               <p>Web-Page Info</p>
             </a>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-circle"></i>
+              <i class="nav-icon fas fa-info"></i>
               <p>Terms & Conditions
               </p>
             </a>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-circle"></i>
+              <i class="nav-icon fas fa-file"></i>
               <p>Privacy Policy
               </p>
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-circle"></i>
+            <a href="pages/examples/logout.php" class="nav-link">
+              <i class="nav-icon fa fas fa-sign-out-alt"></i>
               <p>Logout
               </p>
             </a>
@@ -200,3 +204,6 @@
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
+
+
+  

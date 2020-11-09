@@ -1,7 +1,10 @@
 ﻿<?php
+include "pages/examples/dbc.php";
 include "inc/admin_header.php";
-
-
+if(isset($_SESSION['username']))
+{
+  
+$admin_username=$_SESSION['username'];
 ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -310,4 +313,9 @@ include "inc/admin_header.php";
   <!-- /.content-wrapper -->
   <?php
   include "inc/admin_footer.php";
+}
+else
+{
+  header("Location:pages/examples/login.php");
+}
   ?>

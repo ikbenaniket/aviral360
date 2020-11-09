@@ -69,9 +69,14 @@
             <button name="register" class="btn btn-primary btn-block">Register</button>
           
           </div>
+          <p class="mb-0">
+        <a href="login.php" class="text-center">Already Have an Account</a>
+      </p>
           <!-- /.col -->
         </div>
+        
       </form>
+      
   </div><!-- /.card -->
 </div>
 <!-- /.register-box -->
